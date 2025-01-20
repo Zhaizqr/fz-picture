@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
-@MapperScan("com.fangz.picture.mapper")
+@MapperScan("com.fangz.picture.mybatis.mapper")
 @EnableAspectJAutoProxy(exposeProxy = true)
 public class Application {
 
