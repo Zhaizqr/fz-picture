@@ -13,10 +13,26 @@ public class ResultUtils {
     /**
      * 普通返回
      *
+     */
+    public static BaseResponse<?> success(){
+        return new BaseResponse<>(0,"ok");
+    }
+    /**
+     * 普通返回
+     *
      * @param <T>@return
      */
     public static<T> BaseResponse<T> success(T data){
         return new BaseResponse<>(0,data,"ok");
+    }
+
+    /**
+     * 普通返回，自定义信息
+     *
+     * @param <T>@return
+     */
+    public static<T> BaseResponse<T> success(T data,String message){
+        return new BaseResponse<>(0,data,message);
     }
 
     /**
