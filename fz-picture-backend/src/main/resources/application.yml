@@ -8,9 +8,21 @@ spring:
     name: fz-picture-backend
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/fz-picture
+    url: jdbc:mysql://--:3306/fz-picture?useSSL=false
     username: root
     password: 123456
+  redis:
+    host: --
+    port: 6379
+    password: 123456
+    database: 0
+    lettuce:
+      pool:
+        enabled: true # 启用连接池
+        max-active: 8 # 最大连接数
+        max-idle: 8   # 最大空闲连接数
+        min-idle: 0   # 最小空闲连接数
+        max-wait: -1ms # 最大等待时间（-1 表示无限等待）
 
 mybatis-plus:
   configuration:
@@ -32,3 +44,11 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.fangz.picture.controller
+
+# jwt配置
+jwt:
+  secret-key: --
+  request-expiration-time: 600000 # 10分钟（单位：毫秒）
+  refresh-expiration-time: 1296000000 # 15天（单位：毫秒）
+  token-prefix: FzPicture
+  header-string: Authorization
