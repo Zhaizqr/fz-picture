@@ -1,27 +1,32 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from "vue-router";
 
 // 导入页面组件
-import Home from '../views/Home.vue';
-import About from '../views/About.vue';
+import Home from "../views/Home.vue";
+import About from "../views/About.vue";
 
 // 定义路由
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home,
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About,
-    },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/about1",
+    name: "About1",
+    component: About,
+  },
 ];
 
 // 创建路由实例
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;
