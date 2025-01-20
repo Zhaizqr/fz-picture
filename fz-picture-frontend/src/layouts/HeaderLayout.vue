@@ -24,10 +24,18 @@
     <!-- 右侧抽屉 -->
     <a-drawer
       v-model:open="avatarDrawerVisible"
+      :closable="false"
       width="250px"
       style="border-radius: 0.5rem 0 0 0.5rem"
       placement="right"
     >
+      <div class="drawer-userinfo-container" @click="goToSettings">
+        <a-avatar style="margin-right: 1rem; background-color: #1890ff"
+          >登录</a-avatar
+        >
+        <span style="font-size: 1rem; font-weight: 500">Hi~ 放纵</span>
+      </div>
+      <a-divider />
       <div class="drawer-content">
         <a-button type="link" block class="drawer-button" @click="goToSettings">
           <UserOutlined />
@@ -146,11 +154,40 @@ onMounted(() => {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
   color: #404040;
   border: none;
   background-color: transparent;
   transition: all 0.3s ease;
+}
+.drawer-userinfo-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drawer-userinfo-container:hover {
+  background-color: #fafafa; /* 悬停时背景色更浅 */
+  border-color: #e0e0e0; /* 悬停时边框颜色加深 */
+}
+
+.drawer-userinfo-container .ant-avatar {
+  background-color: #1890ff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.drawer-userinfo-container span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #404040;
 }
 
 .drawer-button:hover {
