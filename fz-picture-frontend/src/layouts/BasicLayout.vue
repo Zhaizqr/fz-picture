@@ -3,12 +3,12 @@
     <a-layout-header class="header"><HeaderLayout /></a-layout-header>
     <a-layout-content class="content">
       <router-view />
-      <div class="footer">
-        <a-typography-link href="https://github.com/Zhaizqr" target="_blank">
-          power by fangzong
-        </a-typography-link>
-      </div>
     </a-layout-content>
+    <a-layout-footer class="footer">
+      <a-typography-link href="https://github.com/Zhaizqr" target="_blank">
+        power by fangzong
+      </a-typography-link>
+    </a-layout-footer>
   </a-layout>
 </template>
 <script lang="ts" setup>
@@ -26,12 +26,13 @@ import HeaderLayout from "./HeaderLayout.vue";
 }
 
 .content {
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 6rem);
   overflow: auto;
 }
 
 .footer {
-  height: 4rem;
+  height: 2rem;
   text-align: center;
+  padding: 0;
 }
 </style>
